@@ -41,15 +41,15 @@ export function VideoModal({ project, onClose }: Props) {
         aria-label="Close video"
         onClick={onClose}
       />
-      <div className="relative z-10 flex w-full max-w-5xl flex-col gap-4">
-        <div className="flex items-start justify-between gap-4">
-          <div>
+      <div className="relative z-10 flex w-full max-w-5xl flex-col gap-3 md:gap-4 max-h-[calc(100dvh-2rem)] md:max-h-[calc(100dvh-5rem)]">
+        <div className="flex items-start justify-between gap-4 shrink-0">
+          <div className="min-w-0">
             <p className="text-eyebrow tracking-eyebrow text-muted uppercase">
               {project.category}
             </p>
             <h3
               id="video-modal-title"
-              className="mt-1 font-display text-2xl text-text-primary italic md:text-3xl"
+              className="mt-1 font-display text-xl text-text-primary italic sm:text-2xl md:text-3xl truncate"
             >
               {project.title}
             </h3>
@@ -58,20 +58,22 @@ export function VideoModal({ project, onClose }: Props) {
             ref={closeRef}
             type="button"
             onClick={onClose}
-            className="grid size-11 shrink-0 place-items-center rounded-full border border-stroke bg-surface text-text-primary transition-colors hover:border-muted"
+            className="grid size-10 md:size-11 shrink-0 place-items-center rounded-full border border-stroke bg-surface text-text-primary transition-colors hover:border-muted"
             aria-label="Close"
           >
             <X className="size-4" strokeWidth={1.75} />
           </button>
         </div>
-        <div className="relative aspect-video overflow-hidden rounded-3xl border border-stroke bg-surface">
-          <iframe
-            src={project.videoUrl}
-            title={project.title}
-            allow="autoplay"
-            allowFullScreen
-            className="absolute inset-0 h-full w-full"
-          />
+        <div className="relative min-h-0 flex-1 overflow-hidden rounded-2xl md:rounded-3xl border border-stroke bg-surface">
+          <div className="relative w-full h-full" style={{ aspectRatio: "16/9" }}>
+            <iframe
+              src={project.videoUrl}
+              title={project.title}
+              allow="autoplay"
+              allowFullScreen
+              className="absolute inset-0 h-full w-full"
+            />
+          </div>
         </div>
       </div>
     </div>,

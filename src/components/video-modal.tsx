@@ -41,7 +41,7 @@ export function VideoModal({ project, onClose }: Props) {
         aria-label="Close video"
         onClick={onClose}
       />
-      <div className="relative z-10 flex w-full max-w-5xl flex-col gap-3 md:gap-4 max-h-[calc(100dvh-2rem)] md:max-h-[calc(100dvh-5rem)]">
+      <div className="relative z-10 flex h-auto min-h-0 w-full max-w-5xl flex-col gap-3 md:gap-4 md:max-h-[calc(100dvh-5rem)]">
         <div className="flex items-start justify-between gap-4 shrink-0">
           <div className="min-w-0">
             <p className="text-eyebrow tracking-eyebrow text-muted uppercase">
@@ -64,8 +64,8 @@ export function VideoModal({ project, onClose }: Props) {
             <X className="size-4" strokeWidth={1.75} />
           </button>
         </div>
-        <div className="relative min-h-0 flex-1 overflow-hidden rounded-2xl md:rounded-3xl border border-stroke bg-surface">
-          <div className="relative w-full h-full" style={{ aspectRatio: "16/9" }}>
+        <div className="video-modal-stage relative w-full flex-none overflow-hidden rounded-2xl border border-stroke bg-surface md:rounded-3xl">
+          <div className="video-modal-frame relative h-full w-full" style={{ aspectRatio: "16/9" }}>
             <iframe
               src={project.videoUrl}
               title={project.title}

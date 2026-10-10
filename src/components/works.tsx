@@ -34,17 +34,17 @@ export function Works({ onOpen }: Props) {
   const toggle = () => setShowAll((v) => !v);
 
   return (
-    <section id="work" className="bg-bg py-12 md:py-16">
+    <section id="work" className="bg-bg pt-2 pb-12 md:pt-6 md:pb-16">
       <div className="mx-auto max-w-[1200px] px-6 md:px-10 lg:px-16">
         <SectionHeading
-          eyebrow="Selected Work"
+          eyebrow=""
           heading={
             <>
               Featured{" "}
               <span className="font-display font-normal italic">projects</span>
             </>
           }
-          subtext="A selection of immersive experiences, games and interactive installations we've built for leading brands."
+          className="mb-6 md:mb-8"
         />
 
         <div className="grid grid-cols-1 items-stretch gap-5 md:grid-cols-12 md:gap-6">

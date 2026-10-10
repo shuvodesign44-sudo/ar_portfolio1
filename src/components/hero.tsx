@@ -1,6 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { ArrowUpRight } from "lucide-react";
 import { ROLES } from "@/lib/projects";
 import { prefersReducedMotion } from "@/lib/utils";
 import { ParticleField } from "@/components/particle-field";
@@ -45,7 +44,7 @@ export function Hero({ ready }: Props) {
     <section
       ref={root}
       id="home"
-      className="relative flex min-h-dvh items-center justify-center overflow-hidden"
+      className="relative flex min-h-[60svh] items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0">
         <video
@@ -65,14 +64,11 @@ export function Hero({ ready }: Props) {
         <div className="absolute inset-x-0 bottom-0 z-[4] h-48 bg-gradient-to-t from-bg to-transparent" />
       </div>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-6 pt-24 pb-28 text-center md:px-10">
-        <p className="blur-in mb-8 text-eyebrow tracking-eyebrow text-muted uppercase">
-          Immersive Experiences
-        </p>
-        <h1 className="name-reveal mb-6 font-display text-6xl leading-[0.9] font-normal tracking-tight text-text-primary italic md:text-8xl lg:text-9xl">
+      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-6 pt-36 pb-20 text-center md:px-10 md:pt-36 md:pb-20">
+        <h1 className="name-reveal mb-8 font-display text-6xl leading-[0.9] font-normal tracking-tight text-text-primary italic md:text-8xl lg:text-9xl">
           Singularity Immersive
         </h1>
-        <p className="blur-in mb-5 text-base text-muted md:text-lg">
+        <p className="blur-in mb-2 text-base text-muted md:text-lg">
           A{" "}
           <span
             key={roleIndex}
@@ -82,39 +78,8 @@ export function Hero({ ready }: Props) {
           </span>{" "}
           studio in Dhaka.
         </p>
-        <p className="blur-in mb-12 max-w-md text-sm text-muted md:text-base">
-          Crafting immersive digital worlds, interactive games, AR experiences and
-          motion solutions that bring brands to life.
-        </p>
-        <div className="blur-in inline-flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="#work"
-            className="group relative inline-flex rounded-full transition-transform duration-200 hover:scale-105 active:scale-[0.96]"
-          >
-            <span className="accent-gradient pointer-events-none absolute -inset-0.5 rounded-full opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
-            <span className="relative inline-flex items-center rounded-full bg-text-primary px-7 py-3.5 text-sm font-medium text-bg transition-colors duration-200 group-hover:bg-bg group-hover:text-text-primary">
-              See Works
-            </span>
-          </a>
-          <a
-            href="#contact"
-            className="group relative inline-flex rounded-full transition-transform duration-200 hover:scale-105 active:scale-[0.96]"
-          >
-            <span className="accent-gradient pointer-events-none absolute -inset-0.5 rounded-full opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
-            <span className="relative inline-flex items-center gap-2 rounded-full border-2 border-stroke bg-bg px-7 py-3.5 text-sm font-medium text-text-primary transition-colors duration-200 group-hover:border-transparent">
-              Reach out
-              <ArrowUpRight className="size-4" strokeWidth={1.75} />
-            </span>
-          </a>
-        </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3">
-        <span className="text-eyebrow tracking-scroll text-muted uppercase">Scroll</span>
-        <span className="relative h-10 w-px overflow-hidden bg-stroke">
-          <span className="absolute inset-x-0 h-3 w-px bg-text-primary animate-scroll-down" />
-        </span>
-      </div>
     </section>
   );
 }

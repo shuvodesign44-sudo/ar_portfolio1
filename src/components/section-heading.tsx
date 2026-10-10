@@ -38,10 +38,12 @@ export function SectionHeading({
       viewport={{ once: true, margin: "-100px" }}
     >
       <div className="max-w-2xl">
-        <div className="mb-5 flex items-center gap-3">
-          <span className="h-px w-8 bg-stroke" aria-hidden />
-          <p className="text-eyebrow tracking-eyebrow text-muted uppercase">{eyebrow}</p>
-        </div>
+        {eyebrow ? (
+          <div className="mb-5 flex items-center gap-3">
+            <span className="h-px w-8 bg-stroke" aria-hidden />
+            <p className="text-eyebrow tracking-eyebrow text-muted uppercase">{eyebrow}</p>
+          </div>
+        ) : null}
         <h2 className="text-3xl leading-tight font-medium tracking-tight text-text-primary md:text-5xl">
           {heading}
         </h2>

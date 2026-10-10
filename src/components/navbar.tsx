@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 const LINKS = [
   { href: "#home", label: "Home", id: "home" },
   { href: "#work", label: "Work", id: "work" },
-  { href: "#contact", label: "Contact", id: "contact" },
 ] as const;
 
 export function Navbar() {
@@ -21,9 +20,8 @@ export function Navbar() {
         ["work", "work"],
         ["journal", "work"],
         ["explorations", "work"],
-        ["contact", "contact"],
       ] as const;
-      let next: "home" | "work" | "contact" = "home";
+      let next: "home" | "work" = "home";
       for (const [id, mapped] of order) {
         const el = document.getElementById(id);
         if (!el) continue;

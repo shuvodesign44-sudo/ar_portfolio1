@@ -2,12 +2,9 @@ import { useCallback, useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { AnimatePresence } from "framer-motion";
 import { Contact } from "@/components/contact";
-import { Explorations } from "@/components/explorations";
 import { Hero } from "@/components/hero";
-import { Journal } from "@/components/journal";
 import { LoadingScreen } from "@/components/loading-screen";
 import { Navbar } from "@/components/navbar";
-import { Stats } from "@/components/stats";
 import { VideoModal } from "@/components/video-modal";
 import { Works } from "@/components/works";
 import type { Project } from "@/lib/projects";
@@ -40,9 +37,6 @@ function Home() {
       <main>
         <Hero ready={!isLoading} />
         <Works onOpen={setActive} />
-        <Journal />
-        <Explorations onOpen={setActive} />
-        <Stats />
         <Contact />
       </main>
       <VideoModal project={active} onClose={() => setActive(null)} />
